@@ -16,10 +16,15 @@
 
   <div class="field">
     <%= f.label :image, "プロトタイプの画像" %><br />
-    <%= f.file_field :image %>
+    <%= f.file_field :images, name: 'prototype[images][]', id: 'prototype_image' %>
   </div>
 
   <div class="actions">
     <%= f.submit "保存する", class: :form__btn  %>
   </div>
+  <div id="image-list"></div>
+<% end %>
+
+<% @prototype.images.each do |image| %>
+  <%= image_tag image, class: 'images' %>
 <% end %>

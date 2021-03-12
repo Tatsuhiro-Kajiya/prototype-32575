@@ -58,4 +58,9 @@ class PrototypesController < ApplicationController
   def contributor_confirmation
     redirect_to root_path unless current_user == @prototype.user
   end
+
+  # 並べ替え機能------------
+  def sort_params
+    params.permit(:sort)
+  end
 end
